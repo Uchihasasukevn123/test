@@ -36,18 +36,25 @@ const myObject = [
     },
 ]
 
-var coincost = 100
-
-const dung = function() {
-    for(var i = 0; i < myObject.length; i++){
-        if(myObject[i].id % 2 === 0){
-            coincost += myObject[i].coin
-            return coincost
-        }
-        else{
-            return 'wrong'
+let coinchange = myObject.map(function(input) {
+    let coincost = 100
+    if(input.id % 2 === 0){
+        coincost += input.coin
+        return {
+            id: input.id,
+            name: input.name,
+            coin: input.coin,
+            coinUse: coincost
         }
     }
-}
+    else{
+        return {
+            id: input.id,
+            name: input.name,
+            coin: input.coin,
+            coinUse: 'wrong'
+        }
+    }
+})
 
-console.log(dung())
+console.log(coinchange)
