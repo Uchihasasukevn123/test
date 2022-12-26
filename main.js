@@ -1,4 +1,5 @@
-const myObject = [
+// Make the variable clearly and meaningful.
+const listCoin = [
     {
         id: 1,
         name: 'javascript',
@@ -36,18 +37,18 @@ const myObject = [
     },
 ]
 
-var coincost = 100
+// Ignore "var", do not use it. use "const" and "let" only.
+let coincost = 100;
 
-const dung = function() {
-    for(var i = 0; i < myObject.length; i++){
-        if(myObject[i].id % 2 === 0){
-            coincost += myObject[i].coin
-            return coincost
-        }
-        else{
-            return 'wrong'
+// Use arrow function of ES6 in Javascript.
+const dung = () => {
+    for(let i = 0; i < listCoin.length; i++){
+        if(listCoin[i].id % 2 === 0) {
+            coincost += listCoin[i].coin;
         }
     }
 }
-
-console.log(dung())
+// We call dung function to do some logic to coincost.
+dung();
+// print result.
+console.log(coincost);
